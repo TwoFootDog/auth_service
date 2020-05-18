@@ -22,10 +22,10 @@ spring:
     hibernate:
       ddl-auto: update
   redis:
-    host: 13.209.43.122
+    host: xx.xx.xx.xx
     port: 6379
     timeout: 1000
-    password: rkdalsrb123$
+    password: xxxxxx
 ---
 jwt:
   secret: xxxxxxxx
