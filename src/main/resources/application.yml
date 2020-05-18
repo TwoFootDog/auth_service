@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: local
+
+---
+
+server:
+  port: 8080
+  servlet:
+    context-path: /user/api/v1
+
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mariadb://xxxx-db1.xxxx.ap-northeast-2.rds.amazonaws.com:3306/xxxx_test_db1
+    username: xxxx
+    password: xxxx
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  redis:
+    host: 13.209.43.122
+    port: 6379
+    timeout: 1000
+    password: rkdalsrb123$
+---
+jwt:
+  secret: xxxxxxxx
+  accessToken:
+    name: X-AUTH-TOKEN
+    expireSecond: 60 # 60초
+  refreshToken:
+    name: X-REF-TOKEN
+    expireDay: 14 # 14일
+
+cookie:
+  expireSecond: 1209600 # 60초
+
+
+
+---
+logging:
+  config: classpath:log4j2.yml
+---
